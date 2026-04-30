@@ -1,0 +1,22 @@
+Task 1: Find the top 10 endpoints generating web traffic
+index=http_lab sourcetype="json"
+| stats count by "id.orig_h"
+| sort -count
+| head 10
+
+Task 2: Count the number of server errors (5xx) observed
+index=http_lab sourcetype="json" status_code>=500 status_code<600
+| stats count as server_errors
+
+Task 3: Identify User-Agents associated with possible scripted attacks
+index=http_lab sourcetype="json" user_agent IN ("sqlmap/1.5.1", "curl/7.68.0", "python-requests/2.25.1", "botnet-checker/1.0")
+| stats count by user_agent
+
+Task 4: Find large file transfers (greater than 500 KB)
+index=http_lab sourcetype="json" resp_body_len>500000
+| table ts "id.orig_h" "id.resp_h" uri resp_body_len
+| sort -resp_body_len
+
+Task 5: Detect suspicious URIs accessed (e.g., /admin, /shell.php, /etc/passwd)
+index=http_lab sourcetype="json" uri IN ("/admin","/shell.php","/etc/passwd")
+| stats count by uri, "id.orig_h"
