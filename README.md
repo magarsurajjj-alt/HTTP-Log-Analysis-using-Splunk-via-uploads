@@ -43,28 +43,6 @@ The main objectives of this project are:
 
 ---
 
-## ⚙️ Setup Instructions
-
-### 1. Install Splunk
-Download and install Splunk from:
-https://www.splunk.com
-
----
-
-### 2. Upload Dataset
-- Go to **Settings → Add Data**
-- Select **Upload**
-- Upload `http_logs.json`
-
----
-
-### 3. Configure Settings
-- **Source Type:** `json` or `zeek:http`
-- **Index:** `http_lab` (recommended)
-- Start indexing
-
----
-
 ## 🔍 Analysis Tasks & SPL Queries
 
 ---
