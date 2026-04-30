@@ -82,7 +82,7 @@ uri IN ("/admin","/shell.php","/etc/passwd")
 | stats count by uri, "id.orig_h"
 
 👉 Identifies attack attempts on sensitive endpoints
-
+```
 📊 Key Insights
 
 From this analysis, the following behaviors can be detected:
