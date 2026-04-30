@@ -92,8 +92,8 @@ Server errors (5xx) → application issues or exploitation attempts
 Suspicious user agents → automated attack tools
 Large file transfers → potential data exfiltration
 Sensitive URI access → probing or exploitation attempts
-🚨 Security Relevance (SOC Perspective)
 
+🚨 Security Relevance (SOC Perspective)
 This project simulates real SOC analyst tasks:
 
 Log ingestion and parsing
